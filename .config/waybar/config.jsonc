@@ -1,0 +1,95 @@
+// ~/.config/waybar/config.jsonc
+{
+  "layer": "top",
+  "height": 37,
+  "spacing": 5,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "custom/wallpaper",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "clock",
+    "tray",
+    "custom/power"
+  ],
+
+  "hyprland/window": {
+    "separate-outputs": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰣇",
+      "2": "󰙯",
+      "3": "󰮯",
+      "4": "",
+      "5": "󰊤",
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
+    }
+  },
+
+  "custom/wallpaper": {
+    "format": " ",
+    "on-click": "/home/borealissaile/.config/hypr/scripts/wallpaper.sh"
+  },
+
+  "cpu": {
+    "format": "{usage}% "
+  },
+
+  "memory": {
+    "format": "{}% "
+  },
+
+  "clock": {
+    "timezone": "America/Sao_Paulo",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+    "format-alt": "{:%a %d-%m-%Y}"
+  },
+
+  "pulseaudio": {
+    "format": "{volume}% {icon}    {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "tray": {
+    "spacing": 10
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "on-click": "nwg-bar"
+  }
+}

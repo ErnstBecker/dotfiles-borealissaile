@@ -4,7 +4,7 @@ final_space = true
 
 [palette]
   black = '#101010'
-  red = '#ff0043'
+  red = '#42e540'
   green = '#78BC61'
   yellow = '#F4C95D'
   blue = '#A2D6F9'

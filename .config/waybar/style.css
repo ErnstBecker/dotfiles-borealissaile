@@ -1,0 +1,103 @@
+/* ~/.config/waybar/style.css */
+
+/* --- Paleta de Cores - KDE Breeze Dark --- */
+@define-color bg #2a2e32; /* Fundo principal dos painéis */
+@define-color bg-hover #31363b; /* Fundo mais claro para seleção/hover */
+@define-color fg #eff0f1; /* Cor principal do texto e ícones */
+@define-color fg-alt #bdc3c7; /* Cor de texto/ícones secundários */
+@define-color accent #3daee9; /* Azul icônico do Breeze */
+@define-color red #da4453; /* Vermelho para alertas/urgente */
+@define-color green #27ae60; /* Verde para status positivo */
+@define-color yellow #f6c226; /* Amarelo para avisos */
+
+/* --- Configurações Globais --- */
+* {
+  font-family: "JetBrainsMono NF", "Symbols Nerd Font";
+  font-weight: bolder;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @fg;
+}
+
+/* --- Estilo dos Blocos Principais --- */
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: @bg;
+  border-radius: 4px; /* Bordas mais sutis, estilo Breeze */
+  margin-top: 5px;
+}
+
+.modules-left {
+  padding: 0 5px 0 10px;
+  margin-left: 10px;
+}
+
+.modules-center {
+  padding: 0 10px;
+}
+
+.modules-right {
+  padding: 0 10px 0 5px;
+  margin-right: 10px;
+}
+
+/* --- Estilo Geral dos Módulos --- */
+#workspaces,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#custom-power,
+#tray,
+#custom-wallpaper {
+  padding: 0 8px;
+  margin: 4px 0;
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+  padding: 0 5px;
+  color: @fg-alt;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+  background-color: @bg-hover;
+  color: @accent;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  color: @accent;
+}
+
+#workpanels button.urgent {
+  color: @red;
+}
+
+/* --- Cores Específicas dos Módulos --- */
+#clock {
+  color: @fg;
+}
+
+#pulseaudio {
+  color: @accent;
+}
+
+#pulseaudio.muted {
+  color: @fg-alt;
+}
+
+#custom-power {
+  color: @red;
+  margin-right: 5px;
+}
